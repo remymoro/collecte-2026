@@ -1,0 +1,11 @@
+{
+  "name": "@collecte-2026/shared-kernel",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": {
+      "@collecte-2026/source": "./src/index.ts",
+      "default": "./dist/index.js"
+    }
+  }
+}

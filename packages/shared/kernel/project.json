@@ -1,0 +1,4 @@
+{
+  "name": "shared-kernel",
+  "tags": ["scope:shared", "type:util"]
+}
