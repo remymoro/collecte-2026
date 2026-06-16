@@ -1,0 +1,12 @@
+{
+  "name": "@collecte-2026/collectes-application",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@collecte-2026/shared-kernel": "workspace:*",
+    "@collecte-2026/collectes-domain": "workspace:*"
+  }
+}
