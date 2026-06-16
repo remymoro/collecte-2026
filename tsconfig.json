@@ -8,6 +8,9 @@
     },
     {
       "path": "./packages/collectes/domain"
+    },
+    {
+      "path": "./packages/collectes/application"
     }
   ]
 }
