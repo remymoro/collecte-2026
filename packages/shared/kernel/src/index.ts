@@ -1,3 +1,1 @@
-// Point d'entrée public du kernel
-// Les value objects partagés seront exportés ici
-export {};
+export { Email } from './value-objects/email';

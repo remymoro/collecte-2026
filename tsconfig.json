@@ -5,6 +5,9 @@
   "references": [
     {
       "path": "./packages/shared/kernel"
+    },
+    {
+      "path": "./packages/collectes/domain"
     }
   ]
 }

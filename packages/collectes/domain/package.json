@@ -1,5 +1,5 @@
 {
-  "name": "@collecte-2026/shared-kernel",
+  "name": "@collecte-2026/collectes-domain",
   "version": "0.0.0",
   "private": true,
   "exports": {

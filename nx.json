@@ -31,6 +31,12 @@
       "options": {
         "targetName": "lint"
       }
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "targetName": "test"
+      }
     }
   ],
   "analytics": false
