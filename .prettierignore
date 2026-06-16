@@ -10,3 +10,6 @@ pnpm-lock.yaml
 .agents
 .opencode
 .github/skills
+packages/api-e2e/.spec.swcrc
+**/.swcrc
+*.swcrc

@@ -11,6 +11,15 @@
     },
     {
       "path": "./packages/collectes/application"
+    },
+    {
+      "path": "./packages/api-e2e"
+    },
+    {
+      "path": "./packages/api"
+    },
+    {
+      "path": "./packages/collectes/infrastructure"
     }
   ]
 }
