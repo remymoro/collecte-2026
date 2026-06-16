@@ -10,6 +10,10 @@ permissions:
   actions: read
   contents: read
 
+env:
+  NX_BASE: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || 'HEAD~1' }}
+  NX_HEAD: HEAD
+
 jobs:
   setup:
     runs-on: ubuntu-latest
@@ -42,7 +46,7 @@ jobs:
           node-version: 24
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
-      - run: pnpm nx affected -t lint --base=origin/main --head=HEAD
+      - run: pnpm nx affected -t lint --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
 
   typecheck:
     runs-on: ubuntu-latest
@@ -59,7 +63,7 @@ jobs:
           node-version: 24
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
-      - run: pnpm nx affected -t typecheck --base=origin/main --head=HEAD
+      - run: pnpm nx affected -t typecheck --exclude=@collecte-2026/workspace --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
 
   test:
     runs-on: ubuntu-latest
@@ -76,7 +80,7 @@ jobs:
           node-version: 24
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
-      - run: pnpm nx affected -t test --base=origin/main --head=HEAD
+      - run: pnpm nx affected -t test --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
 
   build:
     runs-on: ubuntu-latest
@@ -93,4 +97,4 @@ jobs:
           node-version: 24
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
-      - run: pnpm nx affected -t build --base=origin/main --head=HEAD
+      - run: pnpm nx affected -t build --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}

@@ -6,6 +6,20 @@
     "sharedGlobals": []
   },
   "targetDefaults": {
+    "typecheck": {
+      "cache": true,
+      "dependsOn": ["^typecheck"],
+      "inputs": ["default", "{workspaceRoot}/tsconfig.base.json"],
+      "parallelism": false
+    },
+    "build": {
+      "cache": true,
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "cache": true,
+      "dependsOn": ["^typecheck"]
+    },
     "lint": {
       "cache": true,
       "inputs": ["default", "{workspaceRoot}/eslint.config.mjs"]
