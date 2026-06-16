@@ -9,4 +9,7 @@ node_modules
 pnpm-lock.yaml
 .agents
 .opencode
-.github/skillspackages/api-e2e/.spec.swcrc
+.github/skills
+packages/api-e2e/.spec.swcrc
+**/.swcrc
+*.swcrc
