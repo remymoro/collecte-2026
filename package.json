@@ -4,15 +4,19 @@
   "license": "MIT",
   "scripts": {},
   "private": true,
-  "dependencies": {},
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@nx/eslint": "^22.7.5",
+    "@nx/eslint-plugin": "^22.7.5",
     "@nx/js": "22.7.5",
     "@swc-node/register": "1.11.1",
     "@swc/core": "1.15.8",
     "@swc/helpers": "0.5.18",
+    "eslint": "^10.5.0",
     "nx": "22.7.5",
     "prettier": "^3.8.1",
     "tslib": "^2.3.0",
-    "typescript": "~5.9.2"
+    "typescript": "~5.9.2",
+    "typescript-eslint": "^8.61.1"
   }
 }

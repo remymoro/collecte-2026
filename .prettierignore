@@ -4,3 +4,9 @@
 /.nx/cache
 /.nx/workspace-data
 .nx/self-healing
+node_modules
+.nx
+pnpm-lock.yaml
+.agents
+.opencode
+.github/skills
