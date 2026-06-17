@@ -226,6 +226,12 @@ importers:
       '@collecte-2026/collectes-domain':
         specifier: workspace:*
         version: link:../domain
+      '@collecte-2026/shared-kernel':
+        specifier: workspace:*
+        version: link:../../shared/kernel
+      '@prisma/client':
+        specifier: ^7.8.0
+        version: 7.8.0(prisma@7.8.0(@types/react@19.2.17)(magicast@0.5.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(typescript@5.9.3))(typescript@5.9.3)
 
   packages/shared/kernel: {}
 

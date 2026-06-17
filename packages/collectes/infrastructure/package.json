@@ -8,6 +8,6 @@
   "dependencies": {
     "@collecte-2026/shared-kernel": "workspace:*",
     "@collecte-2026/collectes-domain": "workspace:*",
-    "@prisma/client": "workspace:*"
+    "@prisma/client": "^7.8.0"
   }
 }
