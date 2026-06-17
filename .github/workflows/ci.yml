@@ -96,5 +96,5 @@ jobs:
         with:
           node-version: 24
           cache: 'pnpm'
-      - run: pnpm nx affected -t build --exclude=@collecte-2026/workspace --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
       - run: pnpm install --frozen-lockfile
+      - run: pnpm nx affected -t build --exclude=@collecte-2026/workspace --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
