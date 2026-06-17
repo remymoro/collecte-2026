@@ -2,11 +2,18 @@ packages:
   - packages/**
 
 ignoredBuiltDependencies:
+  - '@parcel/watcher'
+  - '@swc/core'
+  - less
   - lmdb
   - msgpackr-extract
+  - protobufjs
+  - unrs-resolver
 
 onlyBuiltDependencies:
   - '@prisma/engines'
+  - cpu-features
   - esbuild
   - nx
   - prisma
+  - ssh2

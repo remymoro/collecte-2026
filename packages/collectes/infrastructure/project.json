@@ -1,4 +1,13 @@
 {
   "name": "collectes-infrastructure",
-  "tags": ["scope:collectes", "type:infrastructure"]
+  "tags": ["scope:collectes", "type:infrastructure"],
+  "targets": {
+    "test:integration": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm exec vitest run --config vitest.integration.config.ts",
+        "cwd": "packages/collectes/infrastructure"
+      }
+    }
+  }
 }
