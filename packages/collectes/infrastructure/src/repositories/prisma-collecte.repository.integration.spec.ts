@@ -1,12 +1,12 @@
 import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import { PostgreSqlContainer, StartedPostgreSqlContainer } from '@testcontainers/postgresql';
 import { PrismaClient } from '@prisma/client';
+import type { Pool } from 'pg';
 import { execSync } from 'child_process';
 import { resolve } from 'path';
 import { PrismaCollecteRepository } from './prisma-collecte.repository';
 import { Collecte, CollecteId } from '@collecte-2026/collectes-domain';
 import { Nom } from '@collecte-2026/shared-kernel';
-
 const WORKSPACE_ROOT = resolve(__dirname, '../../../../..');
 const SCHEMA_PATH = resolve(__dirname, '../prisma/schema.prisma');
 
