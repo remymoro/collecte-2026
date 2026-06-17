@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "rm -rf packages/collectes/infrastructure/node_modules && prisma generate --schema packages/collectes/infrastructure/src/prisma/schema.prisma"
   },
   "private": true,
   "devDependencies": {
