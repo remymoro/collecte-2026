@@ -6,6 +6,8 @@
     ".": "./src/index.ts"
   },
   "dependencies": {
-    "@collecte-2026/collectes-domain": "workspace:*"
+    "@collecte-2026/shared-kernel": "workspace:*",
+    "@collecte-2026/collectes-domain": "workspace:*",
+    "@prisma/client": "workspace:*"
   }
 }
