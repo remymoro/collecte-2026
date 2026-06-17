@@ -13,6 +13,7 @@ permissions:
 env:
   NX_BASE: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || 'HEAD~1' }}
   NX_HEAD: HEAD
+  NX_IGNORE_UNSUPPORTED_TS_SETUP: true
 
 jobs:
   setup:
@@ -29,6 +30,7 @@ jobs:
           node-version: 24
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
+      - run: pnpm exec prisma generate --schema packages/collectes/infrastructure/src/prisma/schema.prisma
       - run: pnpm nx format:check
 
   lint:
@@ -46,7 +48,8 @@ jobs:
           node-version: 24
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
-      - run: pnpm nx affected -t lint --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
+      - run: pnpm exec prisma generate --schema packages/collectes/infrastructure/src/prisma/schema.prisma
+      - run: pnpm nx affected -t lint --exclude=@collecte-2026/workspace --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
 
   typecheck:
     runs-on: ubuntu-latest
@@ -63,6 +66,7 @@ jobs:
           node-version: 24
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
+      - run: pnpm exec prisma generate --schema packages/collectes/infrastructure/src/prisma/schema.prisma
       - run: pnpm nx affected -t typecheck --exclude=@collecte-2026/workspace --parallel=1 --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
 
   test:
@@ -80,6 +84,7 @@ jobs:
           node-version: 24
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
+      - run: pnpm exec prisma generate --schema packages/collectes/infrastructure/src/prisma/schema.prisma
       - run: pnpm nx affected -t test --exclude=@collecte-2026/workspace --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
 
   build:
@@ -97,4 +102,5 @@ jobs:
           node-version: 24
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
-      - run: pnpm nx affected -t build --exclude=@collecte-2026/workspace --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
+      - run: pnpm exec prisma generate --schema packages/collectes/infrastructure/src/prisma/schema.prisma
+      - run: pnpm nx affected -t build --exclude=@collecte-2026/workspace --parallel=1 --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}

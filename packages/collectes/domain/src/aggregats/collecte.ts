@@ -23,6 +23,18 @@ export class Collecte {
     return new Collecte(id, nom, dateCollecte);
   }
 
+  static reconstituer(
+    id: CollecteId,
+    nom: Nom,
+    dateCollecte: Date,
+    statut: StatutCollecte,
+  ): Collecte {
+    const collecte = new Collecte(id, nom, dateCollecte);
+    collecte._statut = statut;
+    collecte._evenements = [];
+    return collecte;
+  }
+
   get id(): CollecteId {
     return this._id;
   }

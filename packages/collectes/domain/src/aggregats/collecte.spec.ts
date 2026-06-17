@@ -26,6 +26,14 @@ describe('Collecte', () => {
     });
   });
 
+  describe('reconstitution', () => {
+    it("reconstitue une collecte depuis la base sans émettre d'événement", () => {
+      const collecte = Collecte.reconstituer(unId(), unNom(), uneDate(), 'Planifiée');
+      expect(collecte.statut).toBe('Planifiée');
+      expect(collecte.prendreEvenements()).toHaveLength(0);
+    });
+  });
+
   describe('événements domaine', () => {
     it('émet CollecteCréée à la création', () => {
       const collecte = Collecte.creer(unId(), unNom(), uneDate());

@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "rm -rf packages/collectes/infrastructure/node_modules && prisma generate --schema packages/collectes/infrastructure/src/prisma/schema.prisma"
   },
   "private": true,
   "devDependencies": {
@@ -32,6 +33,7 @@
     "@swc/core": "1.15.8",
     "@swc/helpers": "0.5.18",
     "@types/node": "^25.9.3",
+    "@types/pg": "^8.20.0",
     "@typescript-eslint/utils": "^8.40.0",
     "@vitest/coverage-v8": "^4.1.9",
     "angular-eslint": "^21.2.0",
@@ -39,6 +41,7 @@
     "husky": "^9.1.7",
     "nx": "22.7.5",
     "prettier": "^3.8.1",
+    "prisma": "^7.8.0",
     "tslib": "^2.3.0",
     "typescript": "~5.9.2",
     "typescript-eslint": "^8.61.1",
@@ -55,7 +58,10 @@
     "@nestjs/common": "^11.0.0",
     "@nestjs/core": "^11.0.0",
     "@nestjs/platform-express": "^11.0.0",
+    "@prisma/adapter-pg": "^7.8.0",
+    "@prisma/client": "^7.8.0",
     "axios": "^1.6.0",
+    "pg": "^8.21.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0"
   }

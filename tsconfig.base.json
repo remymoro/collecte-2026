@@ -17,6 +17,13 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["@collecte-2026/source"]
+    "paths": {
+      "@collecte-2026/shared-kernel": ["./packages/shared/kernel/src/index.ts"],
+      "@collecte-2026/collectes-domain": ["./packages/collectes/domain/src/index.ts"],
+      "@collecte-2026/collectes-application": ["./packages/collectes/application/src/index.ts"],
+      "@collecte-2026/collectes-infrastructure": [
+        "./packages/collectes/infrastructure/src/index.ts"
+      ]
+    }
   }
 }
