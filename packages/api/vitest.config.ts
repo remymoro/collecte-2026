@@ -4,6 +4,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'node',
+    watch: false,
     include: ['src/**/*.spec.ts'],
     passWithNoTests: true,
     coverage: {
