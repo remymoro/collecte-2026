@@ -42,7 +42,8 @@
           "configName": "tsconfig.lib.json",
           "buildDepsName": "build-deps",
           "watchDepsName": "watch-deps"
-        }
+        },
+        "exclude": ["packages/web/**"]
       }
     },
     {
